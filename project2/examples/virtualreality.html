@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Virtual Reality</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="pagePiling.js plugin by Alvaro Trigo." />
+	<meta name="keywords"  content="pile,piling,piling.js,stack,pages,scrolling,stacking,touch,fullpile,scroll,plugin,jquery" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../jquery.pagepiling.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+    
+
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>    
+	<script type="text/javascript" src="../jquery.pagepiling.min.js"></script>
+    
+<!--QUIZ STYLES-->
+	 <link href="css/reset.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="css/slickQuiz.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="css/master.css" media="screen" rel="stylesheet" type="text/css">
+	
+	<!--QUIZ SCRIPTS-->
+	<script src="js/slickQuiz-config.js"></script>
+    <script src="js/slickQuiz.js"></script>
+    <script src="js/master.js"></script>
+
+
+    
+    <script type="text/javascript">
+        
+//            slick quiz js
+             
+        
+        
+		$(document).ready(function() {
+
+			/*
+			* Plugin intialization
+			*/
+	    	$('#pagepiling').pagepiling({
+	    		menu: '#menu',
+	    		anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6',],
+			    sectionsColor: ['white', '#ee005a', '#2C3E50', '#39C'],
+			    navigation: {
+			    	'position': 'right',
+			   		'tooltips': ['VR', 'intro', 'History', 'Devices', 'Future', 'Quiz']
+			   	},
+			    afterRender: function(){
+			    	$('#pp-nav').addClass('custom');
+			    },
+			    afterLoad: function(anchorLink, index){
+			    	if(index>1){
+			    		$('#pp-nav').removeClass('custom');
+			    	}else{
+			    		$('#pp-nav').addClass('custom');
+			    	}
+			    }
+			});
+
+
+			/*
+		    * Internal use of the demo website
+		    */
+		    $('#showExamples').click(function(e){
+				e.stopPropagation();
+				e.preventDefault();
+				$('#examplesList').toggle();
+			});
+
+			$('html').click(function(){
+				$('#examplesList').hide();
+			});
+$(window).on('scroll', function(){
+	$timeline_block.each(function(){
+		if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
+			$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+		}
+	});
+});
+        
+        
+        
+        });
+        
+        
+    </script>
+
+
+    <style>
+    /* Section 1
+	 * --------------------------------------- */
+	#section1 h1{
+		color: #444;
+	}
+	#section1 p{
+		color: #333;
+		color: rgba(0,0,0,0.3);
+	}
+	#section1 img{
+		margin: 20px 0;
+		opacity: 0.7;
+	}
+
+	/* Section 2
+	 * --------------------------------------- */
+        #section2 h1{
+            margin-bottom: 3%;
+        }
+	#section2 p{
+		z-index: 3;
+        text-align: left;
+	}
+	#section2 p{
+		opacity: 0.8;
+	}
+        .devices{
+            margin-top: 10%;
+        }
+        h2{
+            margin-top: 5%;
+        }
+
+/*
+	#section2 #colors{
+		right: 60px;
+		bottom: 0;
+		position: absolute;
+		height: 413px;
+		width: 258px;
+		background-repeat: no-repeat;
+	}
+*/
+
+	/* Section 3
+	 * --------------------------------------- */
+	#section3 #colors{
+		left: 60px;
+		bottom: 0;
+	}
+	#section3 p{
+		color: #757575;
+	}
+
+	#colors2,
+	#colors3{
+		position: absolute;
+		height: 163px;
+		width: 362px;
+		z-index: 1;
+		background-repeat: no-repeat;
+		left: 0;
+		margin: 0 auto;
+		right: 0;
+	}
+	#colors2{
+		background-image: url(imgs/colors2.gif);
+		top:0;
+	}
+	#colors3{
+		background-image: url(imgs/colors3.gif);
+		bottom:0;
+	}
+        .timeline-point {
+    position: relative;
+    clear: both;
+    content: '';
+    display: table;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+	/* Section 4
+	 * --------------------------------------- */
+	#section4 p{
+		opacity: 0.6;
+	}
+
+	/* Overwriting fullPage.js tooltip color
+	* --------------------------------------- */
+	#pp-nav.custom .pp-tooltip{
+		color: #AAA;
+	}
+	#markup{
+		display: block;
+		width: 450px;
+		margin: 20px auto;
+		text-align: left;
+	}
+
+</style>
+
+</head>
+<body>
+	<ul id="menu">
+		<li data-menuanchor="page1" class="active"><a href="#page1">VR</a></li>
+		<li data-menuanchor="page2"><a href="#page2">Intro</a></li>
+		<li data-menuanchor="page3"><a href="#page3">History</a></li>
+		<li data-menuanchor="page4"><a href="#page4">Devices</a></li>
+        <li data-menuanchor="page5"><a href="#page5">Future</a></li>
+         <li data-menuanchor="page6"><a href="#page6">Quiz</a></li>
+     
+	</ul>
+
+
+	<div id="pagepiling">
+	    <div class="section" id="section1">
+	    	<h1>Virtual Reality</h1>
+			<p>The next fronteir</p>
+			<img src="imgs/uncgal.jpeg" alt="pagePiling" />
+			<br />
+
+	    </div>
+	    <div class="section" id="section2">
+	    	<div class="intro">
+                <h1>What is virtual reality?</h1>
+                <p>"Virtual reality (VR) is a computer technology that uses virtual reality headsets, sometimes in combination with physical spaces or multi-projected environments, to generate realistic images, sounds and other sensations that simulate a user's physical presence in a 
+virtual or imaginary environment. 
+<br>
+                    <br>
+
+A person using virtual reality equipment is able to "look around" the artificial world, and with high quality VR move around in it and 
+interact with virtual features or items. The effect is commonly created by VR headsets consisting of head-mounted goggles with a screen in front of the eyes, but can also through specially designed spaces with multiple large screens."
+
+</p>
+	    	</div>
+	    </div>
+        
+	   <div class="section" id="section3">
+					<div class="row">
+						<div class="col-md-12 col-xs-12">
+							<p  class="title" id="beginning">The history of VR</p>
+						</div>
+					</div>
+
+					<div class="row timeline-height">
+						<iframe width=100% height=100% src='timeline.html'frameborder="0"></iframe>
+						
+					</div>
+					
+				
+				</div><!--END OF PAGE THREE-->
+
+        
+	    <div class="section" id="section4">
+	    	<div class="intro">
+	    		<h1>Today's Top Devices</h1>
+	    	</div>
+            <div class="row"> 
+            <div class="devices container">
+                <div class=col-md-4>
+                    <img width="100%"src="imgs/oculus.png">
+                    <h2>Oculus Rift</h2>
+                </div>
+                <div class=col-md-4>
+                    <img width="100%" src="imgs/vive.png">
+                      <h2>HTC Vive</h2>
+                </div>
+                <div class=col-md-4>
+                    <img width="100%" src="imgs/cardboard.png">
+                     <h2>Google Cardboard</h2>
+                </div>
+            </div>
+                </div>
+	    </div>
+        <div class="section" id="section5">
+	    	<div class="intr future">
+	    		<img src="imgs/future.jpg">
+                <div class="row links"> 
+                        <div class="container"> 
+	    		<div class="container col-md-3">
+                        <a href="https://www.recode.net/2017/7/21/16006726/vr-ar-virtual-augmented-reality-clay-bavor-google-cardboard-kara-swisher-lauren-goode-recode-podcast" target="black"> Recode - <i> is the future VR ... or AR?</i> </a>
+                    </div>
+                <div class="container col-md-3">
+                              <a href="http://www.atimes.com/article/virtual-reality-future-adult-entertainment/" target="black"> Asia Times - <i>Is virtual reality the future of adult entertainment? </i> </a>
+                </div>
+                <div class="container col-md-3">
+                    <a href="https://www.forbes.com/sites/forbesinternational/2017/10/05/virtual-reality-gets-real/#54db56553518" target="black"> Forbes - <i> Virtual Reality Gets Real</i>                     
+                    </a>
+                    </div>
+                <div class="container col-md-3">
+                              <a href="https://www.theguardian.com/film/2017/oct/06/if-virtual-reality-is-films-next-big-thing-how-long-will-it-take-to-get-right" target="black">The Gaurdian - <i>If virtual reality is film's next big thing, how long will it take to get right? </i></a>
+                    </div>
+                            </div>
+                </div>
+	    </div>
+        </div>
+        
+         <div class="section" id="section6">
+	    	<div class="col-md-12 col-xs-12">
+				<p class="title">Test Your Knowledge! </p>
+				
+			<div id="slickQuiz">
+             
+
+				 <h1  class="quizName"> where the quiz name goes </h1><style>"Color: black"</style>
+
+        <div class="quizArea">
+            <div class="quizHeader">
+    
+                <a class="button startQuiz" href="#">Get Started!</a>
+   </div>
+            </div>
+            </div>
+
+	    </div>
+             </div>
+<script>
+    $('#vt1').verticalTimeline();
+    $('#vt2').verticalTimeline();
+    $('#vt3').verticalTimeline({
+        startLeft: false
+    });
+    $('#vt4').verticalTimeline({
+        startLeft: false,
+        arrows: false,
+        alternate: false
+    });
+    $('#vt5').verticalTimeline({
+        animate: 'fade'
+    });
+    $('#vt6').verticalTimeline({
+        animate: 'slide'
+    });
+</script>
+</body>
+</html>
